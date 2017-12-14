@@ -5,6 +5,8 @@ class ServerlessPlugin {
     this.serverless = serverless;
     this.options = options;
 
+    this.provider = this.serverless.getProvider('aws');
+
     this.hooks = {
       'aws:package:finalize:mergeCustomProviderResources': this.mergeCustomParameters.bind(this)
     };
